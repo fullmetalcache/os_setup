@@ -3,7 +3,7 @@
 apt-get update;
 apt-get upgrade -y;
 
-apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet;
+apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains;
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
 mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg;
