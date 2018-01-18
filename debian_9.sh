@@ -3,7 +3,7 @@
 apt-get update;
 apt-get upgrade -y;
 
-apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains;
+apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip;
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
 mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg;
@@ -46,3 +46,6 @@ echo 'call vundle#end()' >> ~/.vimrc;
 echo 'filetype plugin indent on' >> ~/.vimrc;
 echo 'let python_highlight_all=1' >> ~/.vimrc;
 echo 'syntax on' >> ~/.vimrc;
+
+pip uninstall pyopenssl;
+easy_install pyopenssl;
