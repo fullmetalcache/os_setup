@@ -17,7 +17,7 @@ git clone https://github.com/fullmetalcache/powerline;
 git clone https://github.com/creddefense/creddefense;
 git clone https://github.com/ChrisTruncer/EyeWitness;
 git clone https://bitbucket.org/LaNMaSteR53/peepingtom.git;
-git clone https://github.com/laramies/theHarvester;
+git clone https://github.com/fullmetalcache/theHarvester;
 git clone https://bitbucket.org/LaNMaSteR53/recon-ng;
 git clone https://github.com/nyxgeek/lyncsmash;
 
