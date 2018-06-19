@@ -1,5 +1,7 @@
 #!/bin/bash
 
+CURRDIR=$(pwd);
+
 apt-get update;
 apt-get upgrade -y;
 
@@ -32,11 +34,11 @@ git clone https://bitbucket.org/LaNMaSteR53/recon-ng;
 git clone https://github.com/nyxgeek/lyncsmash;
 
 #Setup recon-ng (not sure if this is working correctly atm)
-cd ~/os_setup/recon-ng;
+cd $CURRDIR/recon-ng;
 pip install -r REQUIREMENTS;
 
 #Setup EyeWitness
-cd ~/os_setup/EyeWitness;
+cd $CURRDIR/EyeWitness;
 ./setup/setup.sh;
 
 #Install LetsEncrytp / Certbot
