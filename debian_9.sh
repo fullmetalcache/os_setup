@@ -6,14 +6,14 @@ apt-get update;
 apt-get upgrade -y;
 
 #Install packages and dependencies
-apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr;
+apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev;
 
 #Install Java 8
 echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list.d/java-8-debian.list;
 echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list.d/java-8-debian.list;
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886;
 apt-get update;
-apt-get install oracle-java8-installer;
+apt-get install -y oracle-java8-installer;
 
 #Install dotnet
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
@@ -64,6 +64,16 @@ echo 'call vundle#end()' >> ~/.vimrc;
 echo 'filetype plugin indent on' >> ~/.vimrc;
 echo 'let python_highlight_all=1' >> ~/.vimrc;
 echo 'syntax on' >> ~/.vimrc;
+
+#Install dirb
+cd $CURRDIR;
+wget https://newcontinuum.dl.sourceforge.net/project/dirb/dirb/2.22/dirb222.tar.gz;
+tar -xvf dirb222.tar.gz;
+cd dirb222;
+chmod +x configure;
+./configure;
+make -j8;
+cd $CURRDIR;
 
 #Put this in to deal with some weird dependency for one of the tools...not sure if it is needed anymore...
 pip uninstall pyopenssl;
