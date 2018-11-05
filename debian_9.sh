@@ -73,6 +73,10 @@ cd dirb222;
 chmod +x configure;
 ./configure;
 make -j8;
+mkdir wordlists/raft;
+cd wordlists/raft;
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt;
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt;
 cd $CURRDIR;
 
 #Put this in to deal with some weird dependency for one of the tools...not sure if it is needed anymore...
