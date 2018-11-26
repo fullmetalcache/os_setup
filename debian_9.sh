@@ -32,6 +32,7 @@ git clone https://bitbucket.org/LaNMaSteR53/peepingtom.git;
 git clone https://github.com/fullmetalcache/theHarvester;
 git clone https://bitbucket.org/LaNMaSteR53/recon-ng;
 git clone https://github.com/nyxgeek/lyncsmash;
+git clone https://github.com/rvrsh3ll/FindFrontableDomains;
 
 #Setup recon-ng (not sure if this is working correctly atm)
 cd $CURRDIR/recon-ng;
