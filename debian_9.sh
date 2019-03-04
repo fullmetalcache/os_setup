@@ -6,7 +6,7 @@ apt-get update;
 apt-get upgrade -y;
 
 #Install packages and dependencies
-apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev;
+apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof;
 
 #Install Java 8
 echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list.d/java-8-debian.list;
@@ -33,6 +33,7 @@ git clone https://github.com/fullmetalcache/theHarvester;
 git clone https://bitbucket.org/LaNMaSteR53/recon-ng;
 git clone https://github.com/nyxgeek/lyncsmash;
 git clone https://github.com/rvrsh3ll/FindFrontableDomains;
+wget https://raw.githubusercontent.com/killswitch-GUI/CobaltStrike-ToolKit/master/HTTPsC2DoneRight.sh;
 
 #Setup recon-ng (not sure if this is working correctly atm)
 cd $CURRDIR/recon-ng;
