@@ -33,6 +33,7 @@ git clone https://github.com/fullmetalcache/theHarvester;
 git clone https://bitbucket.org/LaNMaSteR53/recon-ng;
 git clone https://github.com/nyxgeek/lyncsmash;
 git clone https://github.com/rvrsh3ll/FindFrontableDomains;
+git clone https://github.com/bluscreenofjeff/Malleable-C2-Randomizer;
 wget https://raw.githubusercontent.com/killswitch-GUI/CobaltStrike-ToolKit/master/HTTPsC2DoneRight.sh;
 
 #Setup recon-ng (not sure if this is working correctly atm)
