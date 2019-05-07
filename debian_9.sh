@@ -6,14 +6,14 @@ apt-get update;
 apt-get upgrade -y;
 
 #Install packages and dependencies
-apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof;
+apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof dirmngr;
 
-#Install Java 8
-echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list.d/java-8-debian.list;
-echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list.d/java-8-debian.list;
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886;
-apt-get update;
-apt-get install -y oracle-java8-installer;
+#Install Java 11
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EA8CACC073C3DB2A;
+echo "deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main" | sudo tee /etc/apt/sources.list.d/linuxuprising-java.list;
+apt update;
+apt install -y oracle-java11-installer;
+apt install -y oracle-java11-set-default;
 
 #Install dotnet
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
