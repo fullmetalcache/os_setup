@@ -6,7 +6,7 @@ apt-get update;
 apt-get upgrade -y;
 
 #Install packages and dependencies
-apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof dirmngr openjdk-8-jdk-headless;
+apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof dirmngr openjdk-8-jdk-headless ike-scan;
 
 #Install dotnet
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
@@ -28,6 +28,8 @@ git clone https://github.com/nyxgeek/lyncsmash;
 git clone https://github.com/rvrsh3ll/FindFrontableDomains;
 git clone https://github.com/bluscreenofjeff/Malleable-C2-Randomizer;
 wget https://raw.githubusercontent.com/killswitch-GUI/CobaltStrike-ToolKit/master/HTTPsC2DoneRight.sh;
+git clone https://github.com/SpiderLabs/ikeforce;
+git clone https://bitbucket.org/grimhacker/office365userenum/src/master/;
 
 #Setup recon-ng (not sure if this is working correctly atm)
 cd $CURRDIR/recon-ng;
@@ -78,3 +80,8 @@ cd $CURRDIR;
 #Put this in to deal with some weird dependency for one of the tools...not sure if it is needed anymore...
 pip uninstall pyopenssl;
 easy_install pyopenssl;
+
+#ikeforce/ikescan stuff
+pip install pyip;
+pip install pycrypto;
+pip install 'pyopenssl==17.2.0';
