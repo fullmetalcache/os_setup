@@ -6,7 +6,7 @@ apt-get update;
 apt-get upgrade -y;
 
 #Install packages and dependencies
-apt-get install -y curl python-dev python-pip git nikto nmap golang libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof dirmngr openjdk-8-jdk-headless ike-scan;
+apt-get install -y curl python-dev python-pip git nikto nmap libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof dirmngr openjdk-8-jdk-headless ike-scan;
 
 #Install dotnet
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
@@ -15,6 +15,22 @@ echo 'deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-str
 
 apt-get update;
 apt-get install -y dotnet-sdk-2.0.2;
+
+#Install GoLang
+cd ~;
+wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz;
+tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz;
+echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile;
+source ~/.profile;
+mkdir /root/go;
+mkdir /root/go/src;
+
+#Install Amass
+echo "export GO111MODULE=on" >> ~/.profile; 
+source ~/.profile;
+go get -v -u github.com/OWASP/Amass/v3/...;
+cd /root/go/src/github.com/OWASP/Amass;
+go install ./...;
 
 #Grab Repos
 git clone https://github.com/fullmetalcache/tools;
@@ -30,6 +46,20 @@ git clone https://github.com/bluscreenofjeff/Malleable-C2-Randomizer;
 wget https://raw.githubusercontent.com/killswitch-GUI/CobaltStrike-ToolKit/master/HTTPsC2DoneRight.sh;
 git clone https://github.com/SpiderLabs/ikeforce;
 git clone https://bitbucket.org/grimhacker/office365userenum/src/master/;
+git clone https://github.com/blechschmidt/massdns;
+git clone https://github.com/infosec-au/altdns;
+wget 
+https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt;
+git clone https://github.com/OWASP/Amass.git;
+
+#Make massdns
+cd ~/massdns;
+make;
+
+#Install altdns
+cd ~/altsdns;
+pip install -R requirements.txt;
+python setup.py install;
 
 #Setup recon-ng (not sure if this is working correctly atm)
 cd $CURRDIR/recon-ng;
