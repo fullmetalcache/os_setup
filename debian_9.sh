@@ -31,8 +31,12 @@ source ~/.profile;
 go get -v -u github.com/OWASP/Amass/v3/...;
 cd /root/go/src/github.com/OWASP/Amass;
 go install ./...;
+mkdir /root/Amass/;
+cp /root/go/bin/amass /root/Amass/;
+
 
 #Grab Repos
+cd ~;
 git clone https://github.com/fullmetalcache/tools;
 git clone https://github.com/fullmetalcache/powerline;
 git clone https://github.com/creddefense/creddefense;
@@ -50,7 +54,6 @@ git clone https://github.com/blechschmidt/massdns;
 git clone https://github.com/infosec-au/altdns;
 wget 
 https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt;
-git clone https://github.com/OWASP/Amass.git;
 
 #Make massdns
 cd ~/massdns;
@@ -106,6 +109,10 @@ cd wordlists/raft;
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt;
 wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt;
 cd $CURRDIR;
+
+#Setup bash to not display entire path
+echo "export PS1='\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '" >> ~/.bashrc;
+source ~/.bashrc;
 
 #Put this in to deal with some weird dependency for one of the tools...not sure if it is needed anymore...
 pip uninstall pyopenssl;
