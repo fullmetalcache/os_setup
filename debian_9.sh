@@ -54,6 +54,7 @@ git clone https://github.com/blechschmidt/massdns;
 git clone https://github.com/infosec-au/altdns;
 wget 
 https://gist.github.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt;
+git clone https://github.com/sullo/nikto;
 
 #Make massdns
 cd ~/massdns;
