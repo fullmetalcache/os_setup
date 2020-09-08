@@ -6,7 +6,7 @@ apt-get update;
 apt-get upgrade -y;
 
 #Install packages and dependencies
-apt-get install -y curl python-dev python-pip git nikto nmap libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof dirmngr openjdk-8-jdk-headless ike-scan;
+apt-get install -y curl python-dev python-pip git nikto nmap libunwind8 gettext apt-transport-https apache2 dnsutils telnet proxychains zip p7zip libffi-dev libssl-dev dirmngr libcurl4-gnutls-dev librtmp-dev lsof dirmngr default-jdk ike-scan;
 
 #Install dotnet
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
